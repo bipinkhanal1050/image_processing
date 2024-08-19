@@ -1,0 +1,5 @@
+venv/
+trash/
+images_old/
+purified_old/
+__pycache__/

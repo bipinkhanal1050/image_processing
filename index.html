@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Invisible Buttons</title>
+    <style>
+        #image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .button {
+            position: absolute;
+            background-color: transparent; /* Make button transparent */
+            border: none; /* Remove border */
+            cursor: pointer; /* Change cursor to pointer */
+            background-color: rgba(0, 128, 0, 0.2);
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .button-text {
+            position: absolute;
+            color: black;
+            background-color: white;
+            font-size: 14px;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        #message-container {
+            margin-top: 20px;
+        }
+
+        #image-selector {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-selector">
+        <!-- Generate buttons for each image -->
+        <script>
+            for (let i = 1; i <= 30; i++) {
+                document.write(`<button onclick="loadImage(${i})">Image ${i}</button>`);
+            }
+        </script>
+    </div>
+    <div id="image-container">
+        <img id="main-image" src="images/1.png" alt="Sample Image">
+    </div>
+    <div id="message-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
